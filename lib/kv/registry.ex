@@ -30,7 +30,7 @@ defmodule KV.Registry do
       {:noreply, names}
     else
       {:ok, bucket} = KV.Bucket.start_link([])
-      {:noreply, KV.Bucket.put(names, name, bucket)}
+      {:noreply, Map.put(names, name, bucket)}
     end
   end
 end
